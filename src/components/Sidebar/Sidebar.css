@@ -1,11 +1,64 @@
 .sidebar {
-    background: #e3e9ef;
+    background: #6356ab;
+    color: #ffffff;
     max-width: 300px;
     width: 100%;
-    padding: 20px;
+    padding: 20px 30px 20px 40px;
     box-sizing: border-box;
 }
 
 .sidebar__title {
     margin: 0 0 20px;
+    font-weight: 300;
+    font-size: 26px;
+}
+
+.categories__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.categories__item {
+    position: relative;
+    margin-bottom: 10px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.categories__item i {
+    position: relative;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 8px;
+    border-radius: 50%;
+}
+
+.categories__add {
+    position: relative;
+    background: none;
+    margin: 15px 0 0;
+    border: 0;
+    padding: 0 0 0 17px;
+    color: #ffffff;
+    font-weight: 300;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+.categories__add::before {
+    content: '+';
+    position: absolute;
+    left: -1px;
+    top: 0;
+    color: #ffffff;
+    transition: 0.1s ease;
+}
+
+.categories__add:hover::before,
+.categories__add:hover {
+    color: #ecafaf;
 }

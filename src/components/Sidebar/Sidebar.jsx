@@ -1,19 +1,26 @@
-import React from "react";
+import React from 'react';
 import './Sidebar.css';
+import uuid from 'react-uuid';
 
-const Sidebar = () => {
+const Sidebar = props => {
+    const { categories } = props;
+
     return (
         <aside className="app__sidebar sidebar">
-            <h2 className="sidebar__title">sidebar</h2>
-            <h4>categories:</h4>
-            <ul>
-                <li>work</li>
-                <li>education</li>
-                <li>personal</li>
-                <li>books</li>
-                <li>sport</li>
-            </ul>
-            <button type="button">add new category</button>
+            <div className="sidebar__categories categories">
+                <h4 className="sidebar__title">categories:</h4>
+                <ul className="categories__list">
+                    {categories.map(category => {
+                        return (
+                            <li className="categories__item" key={uuid()}>
+                                <i style={{ 'background': category.color }} />
+                                {category.name}
+                            </li>
+                        )
+                    })}
+                </ul>
+                <button type="button" className="categories__add">add new category</button>
+            </div>
         </aside>
     )
 };

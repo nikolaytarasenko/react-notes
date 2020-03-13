@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import uuid from 'react-uuid';
 
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import AddNewNoteForm from "./components/AddNewNoteForm/AddNewNoteForm";
-import NoteItem from "./components/NoteItem/NoteItem";
 import NotesList from "./components/NotesList/NotesList";
 
 class App extends Component {
@@ -17,8 +15,18 @@ class App extends Component {
                 { id: new Date().getTime(), title: 'first note', text: 'some text for first note', category: 'work', date: new Date() },
                 { id: new Date().getTime(), title: 'second note', text: 'some text for second note', category: 'education', date: new Date() }
             ],
-            addNoteFormVisibility: false,
-            currentFormData: {}
+            addNoteFormVisibility: true,
+            currentFormData: {
+                title: '',
+                text: ''
+            },
+            categories: [
+                { id: 1584107751792, name: 'work', color: '#de5454' },
+                { id: 1584107751793, name: 'education', color: '#4ec568' },
+                { id: 1584107751794, name: 'personal', color: '#264565' },
+                { id: 1584107751795, name: 'books', color: '#b36b2d' },
+                { id: 1584107751796, name: 'sport', color: '#b578f7' }
+            ]
         };
 
         this.toggleAddNewNoteForm = this.toggleAddNewNoteForm.bind(this);
@@ -26,10 +34,13 @@ class App extends Component {
         this.setCurrentFormData = this.setCurrentFormData.bind(this);
     }
 
-    toggleAddNewNoteForm(e) {
+    toggleAddNewNoteForm() {
         this.setState({
             addNoteFormVisibility: !this.state.addNoteFormVisibility,
-            currentFormData: Object.assign({})
+            currentFormData: Object.assign({}, {
+                title: '',
+                text: ''
+            })
         })
     }
 
@@ -40,7 +51,11 @@ class App extends Component {
                 title: this.state.currentFormData.title,
                 text: this.state.currentFormData.text,
                 date
-            }]
+            }],
+            currentFormData: Object.assign({}, {
+                title: '',
+                text: ''
+            })
         })
     }
 
@@ -53,12 +68,11 @@ class App extends Component {
     }
 
     render() {
-        console.log(this.state.notes)
         return (
             <div className="app">
                 <Header />
                 <main className="app__main">
-                    <Sidebar />
+                    <Sidebar categories={this.state.categories} />
                     <div className="app__container">
                         <div className="add-note">
                             <button
@@ -71,6 +85,7 @@ class App extends Component {
                                 <AddNewNoteForm
                                     addNewNote={this.addNewNote}
                                     setCurrentFormData={this.setCurrentFormData}
+                                    currentFormData={this.state.currentFormData}
                                 />
                                 : null
                             }
