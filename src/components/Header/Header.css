@@ -1,0 +1,8 @@
+.header {
+    background: black;
+}
+
+.header .logo-link {
+    color: #ffffff;
+    text-decoration: none;
+}
