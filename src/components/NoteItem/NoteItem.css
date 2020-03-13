@@ -1,0 +1,6 @@
+.notes-item {
+    display: inline-block;
+    width: 25%;
+    border: 1px solid silver;
+    box-sizing: border-box;
+}

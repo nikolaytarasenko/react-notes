@@ -1,3 +1,11 @@
 .sidebar {
-    background: silver;
+    background: #e3e9ef;
+    max-width: 300px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar__title {
+    margin: 0 0 20px;
 }

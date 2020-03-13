@@ -1,8 +1,9 @@
-import React from "react";
+import React from 'react';
+import './NoteItem.css';
 
 const NoteItem = ({ title, text, date, category }) => {
     return (
-        <div>
+        <div className="notes-item">
             <h2>{title}</h2>
             <p>{text}</p>
             <strong>{date.toLocaleDateString()}</strong>
