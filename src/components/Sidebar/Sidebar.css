@@ -1,10 +1,11 @@
 .sidebar {
-    background: #6356ab;
+    /*background: #6356ab;*/
     color: #ffffff;
     max-width: 300px;
     width: 100%;
     padding: 20px 30px 20px 40px;
     box-sizing: border-box;
+    background-image: linear-gradient(to right, #141e30, #243b55);
 }
 
 .sidebar__title {

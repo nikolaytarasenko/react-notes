@@ -1,10 +1,66 @@
 .new-note {
-    background: #ffffff;
+    background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+    color: #ffffff;
     margin-bottom: 30px;
     padding: 30px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.03);
+    border-radius: 2px;
+    box-shadow: 0 0.46875rem 2.1875rem rgba(0, 0, 0, 0.03),
+                0 0.9375rem 1.40625rem rgba(0, 0, 0, 0.03),
+                0 0.25rem 0.53125rem rgba(0, 0, 0, 0.05),
+                0 0.125rem 0.1875rem rgba(0, 0, 0, 0.03);
 }
 
 .new-note h2 {
     margin: 0 0 30px;
+}
+
+.new-note form {
+    max-width: 400px;
+}
+
+.form-row {
+    margin-bottom: 20px;
+}
+
+.form-row label {
+    display: block;
+    margin-bottom: 7px;
+}
+
+.new-note input[type="text"],
+.new-note textarea {
+    width: 100%;
+    border: 0;
+    border-radius: 2px;
+    padding: 10px;
+    font-family: inherit;
+    transition: 0.1s ease;
+}
+
+.new-note input[type="text"]:active,
+.new-note input[type="text"]:focus,
+.new-note textarea:active,
+.new-note textarea:focus {
+    outline: 0;
+    border: 0;
+    background: #e5eaf1;
+}
+
+.new-note textarea {
+    min-height: 100px;
+    height: 100%;
+}
+
+.new-note input[type="submit"] {
+    background: #0d193c9e;
+    padding: 10px;
+    color: #ffffff;
+    border: 1px solid #0d193c9e;
+    border-radius: 2px;
+    width: 100%;
+    transition: 0.15s ease;
+}
+
+.new-note input[type="submit"]:hover {
+    background: #030b219e;
 }

@@ -11,5 +11,14 @@
 .app__container {
   flex: 1;
   padding: 30px 50px;
-  background: #efefef;
+  background: #f1f4f6;
+}
+
+.add-note-button {
+  background: #344769;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  font-family: inherit;
 }

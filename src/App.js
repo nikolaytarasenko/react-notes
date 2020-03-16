@@ -23,7 +23,7 @@ class App extends Component {
             categories: [
                 { id: 1584107751792, name: 'work', color: '#de5454' },
                 { id: 1584107751793, name: 'education', color: '#4ec568' },
-                { id: 1584107751794, name: 'personal', color: '#264565' },
+                { id: 1584107751794, name: 'personal', color: '#217ede' },
                 { id: 1584107751795, name: 'books', color: '#b36b2d' },
                 { id: 1584107751796, name: 'sport', color: '#b578f7' }
             ]
@@ -60,10 +60,10 @@ class App extends Component {
     }
 
     setCurrentFormData(currentFormData) {
-        const currentFormDataClone = Object.assign({}, this.state.currentFormData, currentFormData);
+        const newCurrentFormData = Object.assign({}, this.state.currentFormData, currentFormData);
 
         this.setState({
-            currentFormData: currentFormDataClone
+            currentFormData: newCurrentFormData
         })
     }
 
@@ -77,6 +77,7 @@ class App extends Component {
                         <div className="add-note">
                             <button
                                 type="button"
+                                className="add-note-button"
                                 onClick={this.toggleAddNewNoteForm}
                             >
                                 {this.state.addNoteFormVisibility ? 'Hide form' : 'Add new note'}

@@ -6,8 +6,10 @@ const NoteItem = ({ title, text, date, category }) => {
         <div className="notes-item">
             <h2>{title}</h2>
             <p>{text}</p>
-            <strong>{date.toLocaleDateString()}</strong>
-            <p>Category: {category}</p>
+            <footer>
+                <div>Category: {category}</div>
+                <strong>{date.toLocaleDateString()}</strong>
+            </footer>
         </div>
     )
 };
