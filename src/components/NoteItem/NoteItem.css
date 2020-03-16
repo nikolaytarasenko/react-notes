@@ -2,6 +2,7 @@
     display: inline-block;
     background: #ffffff;
     padding: 20px;
+    border-radius: 2px;
     box-sizing: border-box;
     box-shadow: 0 0.46875rem 2.1875rem rgba(0, 0, 0, 0.03),
                 0 0.9375rem 1.40625rem rgba(0, 0, 0, 0.03),
@@ -19,4 +20,5 @@
     margin-top: 20px;
     padding-top: 10px;
     border-top: 1px solid #d2e1f3;
+    font-size: 13px;
 }

@@ -1,5 +1,5 @@
 .new-note {
-    background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+    background: #344769;
     color: #ffffff;
     margin-bottom: 30px;
     padding: 30px;
@@ -58,6 +58,7 @@
     border: 1px solid #0d193c9e;
     border-radius: 2px;
     width: 100%;
+    font-family: inherit;
     transition: 0.15s ease;
 }
 

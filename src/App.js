@@ -15,12 +15,13 @@ class App extends Component {
                 { id: new Date().getTime(), title: 'first note', text: 'some text for first note', category: 'work', date: new Date() },
                 { id: new Date().getTime(), title: 'second note', text: 'some text for second note', category: 'education', date: new Date() }
             ],
-            addNoteFormVisibility: true,
+            addNoteFormVisibility: false,
             currentFormData: {
                 title: '',
                 text: ''
             },
             categories: [
+                { id: 1584107751791, name: 'default', color: '#ffffff' },
                 { id: 1584107751792, name: 'work', color: '#de5454' },
                 { id: 1584107751793, name: 'education', color: '#4ec568' },
                 { id: 1584107751794, name: 'personal', color: '#217ede' },
@@ -32,6 +33,7 @@ class App extends Component {
         this.toggleAddNewNoteForm = this.toggleAddNewNoteForm.bind(this);
         this.addNewNote = this.addNewNote.bind(this);
         this.setCurrentFormData = this.setCurrentFormData.bind(this);
+        this.addNewCategory = this.addNewCategory.bind(this);
     }
 
     toggleAddNewNoteForm() {
@@ -44,18 +46,20 @@ class App extends Component {
         })
     }
 
-    addNewNote(date) {
+    addNewNote(date, category) {
         this.setState({
             notes: [...this.state.notes, {
                 id: date.getTime(),
                 title: this.state.currentFormData.title,
                 text: this.state.currentFormData.text,
+                category,
                 date
             }],
             currentFormData: Object.assign({}, {
                 title: '',
                 text: ''
-            })
+            }),
+            addNoteFormVisibility: false
         })
     }
 
@@ -67,17 +71,29 @@ class App extends Component {
         })
     }
 
+    addNewCategory(category, color) {
+        const newCategory = {
+            id: new Date().getTime(),
+            name: category,
+            color
+        };
+
+        this.setState({
+            categories: [...this.state.categories, newCategory]
+        });
+    }
+
     render() {
         return (
             <div className="app">
                 <Header />
                 <main className="app__main">
-                    <Sidebar categories={this.state.categories} />
+                    <Sidebar categories={this.state.categories} addNewCategory={this.addNewCategory} />
                     <div className="app__container">
                         <div className="add-note">
                             <button
                                 type="button"
-                                className="add-note-button"
+                                className={this.state.addNoteFormVisibility ? 'add-note-button opened' : 'add-note-button'}
                                 onClick={this.toggleAddNewNoteForm}
                             >
                                 {this.state.addNoteFormVisibility ? 'Hide form' : 'Add new note'}
@@ -87,12 +103,12 @@ class App extends Component {
                                     addNewNote={this.addNewNote}
                                     setCurrentFormData={this.setCurrentFormData}
                                     currentFormData={this.state.currentFormData}
+                                    categories={this.state.categories}
                                 />
                                 : null
                             }
                         </div>
                         <NotesList notes={this.state.notes} />
-
                     </div>
                 </main>
             </div>

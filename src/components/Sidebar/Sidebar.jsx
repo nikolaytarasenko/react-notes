@@ -1,6 +1,7 @@
 import React from 'react';
 import './Sidebar.css';
 import uuid from 'react-uuid';
+import AddCategoryForm from "../AddCategoryForm/AddCategoryForm";
 
 const Sidebar = props => {
     const { categories } = props;
@@ -19,7 +20,7 @@ const Sidebar = props => {
                         )
                     })}
                 </ul>
-                <button type="button" className="categories__add">add new category</button>
+                <AddCategoryForm addNewCategory={props.addNewCategory} />
             </div>
         </aside>
     )

@@ -1,0 +1,62 @@
+.add-category input {
+    width: 100%;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+.form-control label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.color-picker > div {
+    width: 100% !important;
+}
+
+.color-picker {
+    margin-bottom: 18px;
+}
+
+.add-category input[type="text"] {
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.add-category input[type="text"],
+.add-category input[type="text"]:active,
+.add-category input[type="text"]:focus {
+    outline: 0;
+    border: 0;
+    background: #e5eaf1;
+}
+
+.add-category input[type="button"],
+.add-category input[type="submit"] {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 2px;
+    padding: 10px;
+    transition: 0.1s ease;
+}
+
+.add-category input[type="button"]:hover,
+.add-category input[type="submit"]:hover {
+    border: 1px solid #7498da;
+    color: #7498da;
+}
+
+.add-category input[type="button"],
+.add-category input[type="submit"],
+.add-category input[type="text"] {
+    font-family: inherit;
+}
+
+.categories__add {
+    opacity: 0;
+}
+
+.categories__add.visible {
+    opacity: 1;
+}
