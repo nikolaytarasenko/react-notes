@@ -7,7 +7,7 @@ const NoteItem = ({ title, text, date, category }) => {
             <h2>{title}</h2>
             <p>{text}</p>
             <footer>
-                <div>Category: {category}</div>
+                <div>Category: <span>{category}</span></div>
                 <strong>{date.toLocaleDateString()}</strong>
             </footer>
         </div>

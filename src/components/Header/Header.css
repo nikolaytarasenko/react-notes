@@ -6,4 +6,6 @@
 .header .logo-link {
     color: #ffffff;
     text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
 }

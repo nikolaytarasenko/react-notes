@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <header className="header">
             <a href="./" className="logo-link">
-                notes app
+                Notes app
             </a>
         </header>
     )

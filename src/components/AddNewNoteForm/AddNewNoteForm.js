@@ -51,7 +51,7 @@ const AddNewNoteForm = props => {
                     <textarea name="text" id="new-note-title" maxLength="180" placeholder="type your note text here.." onChange={inputChangeHandler} value={props.currentFormData.text} />
                 </div>
                 <div className="form-row">
-                    <label htmlFor="new-note-text" >Category:</label>
+                    <label htmlFor="new-note-text" >Category: {selectedCategory}</label>
                     <select name="categories" size={props.categories.length} value={selectedCategory} onChange={categoryChangeHandler} >
                         {props.categories.map(cat => {
                             return <option key={uuid()} value={cat.name}>{cat.name}</option>

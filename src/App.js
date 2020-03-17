@@ -13,7 +13,10 @@ class App extends Component {
         this.state = {
             notes: [
                 { id: new Date().getTime(), title: 'first note', text: 'some text for first note', category: 'work', date: new Date() },
-                { id: new Date().getTime(), title: 'second note', text: 'some text for second note', category: 'education', date: new Date() }
+                { id: new Date().getTime(), title: 'second note', text: 'some text for second note', category: 'education', date: new Date() },
+                { id: new Date().getTime(), title: 'third note', text: 'some text for third note', category: 'education', date: new Date() },
+                { id: new Date().getTime(), title: 'fourth note', text: 'some text for fourth note', category: 'books', date: new Date() },
+                { id: new Date().getTime(), title: 'fifth note', text: 'some text for fifth note', category: 'sport', date: new Date() }
             ],
             addNoteFormVisibility: false,
             currentFormData: {
@@ -58,8 +61,7 @@ class App extends Component {
             currentFormData: Object.assign({}, {
                 title: '',
                 text: ''
-            }),
-            addNoteFormVisibility: false
+            })
         })
     }
 
@@ -91,13 +93,15 @@ class App extends Component {
                     <Sidebar categories={this.state.categories} addNewCategory={this.addNewCategory} />
                     <div className="app__container">
                         <div className="add-note">
-                            <button
-                                type="button"
-                                className={this.state.addNoteFormVisibility ? 'add-note-button opened' : 'add-note-button'}
-                                onClick={this.toggleAddNewNoteForm}
-                            >
-                                {this.state.addNoteFormVisibility ? 'Hide form' : 'Add new note'}
-                            </button>
+                            <header className="add-note-header">
+                                <button
+                                    type="button"
+                                    className={this.state.addNoteFormVisibility ? 'add-note-button opened' : 'add-note-button'}
+                                    onClick={this.toggleAddNewNoteForm}
+                                >
+                                    {this.state.addNoteFormVisibility ? 'Hide form' : 'Add new note'}
+                                </button>
+                            </header>
                             {this.state.addNoteFormVisibility ?
                                 <AddNewNoteForm
                                     addNewNote={this.addNewNote}

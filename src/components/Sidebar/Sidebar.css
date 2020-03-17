@@ -63,3 +63,17 @@
 .categories__add:hover {
     color: #7498da;
 }
+
+.categories__edit,
+.categories__remove {
+    display: none;
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.categories__item:hover .categories__edit,
+.categories__item:hover .categories__remove {
+    display: block;
+}
